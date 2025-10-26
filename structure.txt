@@ -1,0 +1,268 @@
+.
+├── eslint.config.js
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── config
+│   ├── description
+│   ├── HEAD
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               └── main
+│   ├── objects
+│   │   ├── 04
+│   │   │   └── 4d57cdb0d5b5bff3475112359a4ee70439bf78
+│   │   ├── 08
+│   │   │   └── 6c2f40d683b9bc8d6151d2d1f7a35150c3d1e3
+│   │   ├── 0a
+│   │   │   └── 7078fe510b2c8fd7a0c22ea55f59b303af5087
+│   │   ├── 0e
+│   │   │   └── 2e784ca33c04655e806826996d288a2b424254
+│   │   ├── 10
+│   │   │   └── 6e260c0485de47d75da403d9e611b8ffe95e62
+│   │   ├── 14
+│   │   │   ├── 21f4ba360fd424447de4882a0579f1f17dd9a6
+│   │   │   ├── 277cbd6debc13ec05189d19dd47ee1ff8b4287
+│   │   │   └── ef8339835315f78c0e9d0107dee3e354086af1
+│   │   ├── 17
+│   │   │   └── b6d9d20a3dc4931541d533c76ce8cb191b0b86
+│   │   ├── 18
+│   │   │   ├── bc70ebe277fbfe6e55e6f9a0ae7e2c3e4bdd83
+│   │   │   └── d124af7b013ff08c158fef26f8a5bd78997ea1
+│   │   ├── 1c
+│   │   │   └── cac18923a50984bcb065ba60b59b6b617a84fd
+│   │   ├── 22
+│   │   │   └── 865477443ad549748fbd876346e1dbac062d0d
+│   │   ├── 2a
+│   │   │   └── ad72562d9fa2a2e184fa429fccb5c83103e364
+│   │   ├── 35
+│   │   │   └── 2e6a329fa12bf3286ee628aa2e6641201cdff8
+│   │   ├── 3e
+│   │   │   ├── 4bf0ae46f95fb567d88e553c96932d0856bba7
+│   │   │   └── 7199894a02744e20dc739149467b5fba22bbb1
+│   │   ├── 3f
+│   │   │   └── 35862474aad9f8486f0053c2a8ba50243d5e68
+│   │   ├── 40
+│   │   │   └── bf5ad9b2aa60775b1bc0ada637316415213a93
+│   │   ├── 45
+│   │   │   └── ced205b7a1dacf49141ee6a15cde91f8db65ff
+│   │   ├── 47
+│   │   │   ├── 500d8b51a222852e81bce0191ed69a583ca905
+│   │   │   └── b10f9589ffb2d55fca130c658364cbf798e4f7
+│   │   ├── 48
+│   │   │   └── 2cfc164378a69c1a9fbe309027cb4f7d57cdb8
+│   │   ├── 4b
+│   │   │   └── 825dc642cb6eb9a060e54bf8d69288fbee4904
+│   │   ├── 4c
+│   │   │   └── f2c21ce745299b310d976edd9123c6eece739d
+│   │   ├── 51
+│   │   │   └── 31956ec13387d21dda032d3a75d9427d6fb328
+│   │   ├── 54
+│   │   │   └── 49debd6241ff9c70580906a97f5e75739961c3
+│   │   ├── 55
+│   │   │   └── 7b37c44d5cb352ff331f90e7fba0189cdfa65e
+│   │   ├── 58
+│   │   │   └── 541b0731319e997b8796f59896d5791fe89c03
+│   │   ├── 64
+│   │   │   └── de1d35ac7af434dd1b63cff80a2141d4e53e8d
+│   │   ├── 6a
+│   │   │   └── e0f2ba8bb893a54dd0e88d7695e4e330ebb768
+│   │   ├── 6c
+│   │   │   └── 87de9bb3358469122cc991d5cf578927246184
+│   │   ├── 6d
+│   │   │   └── 0d56be774154f0de903ad50875a70e0f8d8581
+│   │   ├── 72
+│   │   │   └── 6a3a469f37980734e8ae21bb459be64e841276
+│   │   ├── 74
+│   │   │   └── b403ffa0e027c3abe6903f04903dea08492095
+│   │   ├── 7c
+│   │   │   └── e52a7c843d86450ef8354063e36751561e8151
+│   │   ├── 7f
+│   │   │   └── 315d276cbdd84cbc1cd3c2edbaf1909e31065a
+│   │   ├── 82
+│   │   │   └── e91ef46425e4dc368086184f8f8c64ad7335fe
+│   │   ├── 88
+│   │   │   └── fe4304b5403478c2723d666d8a3d8520e0162e
+│   │   ├── 89
+│   │   │   └── d86525a151c64d24a1f36f449519c89573fbe7
+│   │   ├── 8d
+│   │   │   └── 75cf6b494a28d0c4b8977130f9f94901ec9ab0
+│   │   ├── 8e
+│   │   │   ├── 36073bf132239365cc905cafd3e875b9f1daa2
+│   │   │   └── 9f5fe07edfe0e6f29a5fd63e065ffadaa486aa
+│   │   ├── 94
+│   │   │   ├── a928ef183e3476051296b4b790a685f500478f
+│   │   │   └── c0b2fc152a086447a04f62793957235d2475be
+│   │   ├── 97
+│   │   │   └── 417cdfb134f727550e21c5ec3b8e8728d17207
+│   │   ├── 9e
+│   │   │   └── 3d48e9e6f17404cd16ade090b89df1612318bf
+│   │   ├── 9f
+│   │   │   └── 62ec0b81dae76fa06c2ddc50a74d1138f30373
+│   │   ├── a2
+│   │   │   └── 3146986b535e94a7030b42a77421a324defd43
+│   │   ├── a4
+│   │   │   ├── 61c505f1f0c24ab12240ac3f7fa374dfa237fb
+│   │   │   └── 6b4bcddbc730d46b4c22b12d6e1ee2278c22f2
+│   │   ├── a5
+│   │   │   └── 47bf36d8d11a4f89c59c144f24795749086dd1
+│   │   ├── ab
+│   │   │   └── 7acd27d1d4ba75c1bfd49aae19047b26a31f81
+│   │   ├── b0
+│   │   │   └── c140e08186aa7e55a4076d23fe7a4e0449ef05
+│   │   ├── b2
+│   │   │   └── 4327aa2b609dc0c8b9595a7dde74d6c12458da
+│   │   ├── b9
+│   │   │   └── a1a6deac8775b5598874b2bc3c7971d82cf211
+│   │   ├── ba
+│   │   │   └── 748c84b259d2d1184d8620fa8e061006749cbd
+│   │   ├── c0
+│   │   │   └── 6db68154fbc8bfac464e8cdb1827133e28655d
+│   │   ├── c1
+│   │   │   └── 18467f651e187b58d4668775eab3d1956b2213
+│   │   ├── c2
+│   │   │   └── c0f9e394e70ec2bbc8763eb40689cd379ac4ab
+│   │   ├── c3
+│   │   │   └── a728e613595366f6559d4ca9bf1b02846101cf
+│   │   ├── c8
+│   │   │   └── dd522a65447bcd91a5838fa1abb4a00d3005a1
+│   │   ├── cd
+│   │   │   └── 73a63dbfbdbd09243662a121f60edf2c0f126b
+│   │   ├── ce
+│   │   │   └── e1e2c788d908e4a8ff796eb6edbe73ee73fffd
+│   │   ├── cf
+│   │   │   └── 29631b97c2d236080535559f67a3a61dc67943
+│   │   ├── d1
+│   │   │   └── bb457dcf1c4229415e94c909d7b1380e15fcb8
+│   │   ├── d3
+│   │   │   └── 751018b08e734e8568f06cedab72bf741e6a14
+│   │   ├── d5
+│   │   │   └── d44828ffa990dc70124676a7a43f0f1fe7177c
+│   │   ├── d7
+│   │   │   └── 2a2589b645f1742c811324d06805ea88704d47
+│   │   ├── df
+│   │   │   └── af941c2baffa718245ee4165e86831c0953bea
+│   │   ├── e7
+│   │   │   └── b8dfb1b2a60bd50538bec9f876511b9cac21e3
+│   │   ├── ea
+│   │   │   └── 837a205416ba491ec62dab5be7b9aeb603e515
+│   │   ├── f5
+│   │   │   └── dc61f3b3689f8125e1bff6d671833088837c54
+│   │   ├── fc
+│   │   │   ├── 6cd2316f6ff1cc42cad6f8d9326d464242ed7c
+│   │   │   └── b2d42e5956ea0b416778627c5cc8bcef9f86db
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       └── main
+│       └── tags
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── public
+├── README.md
+├── server
+│   ├── controllers
+│   │   ├── folderController.js
+│   │   └── registerController.js
+│   ├── .env
+│   ├── generated
+│   │   └── prisma
+│   │       ├── client.d.ts
+│   │       ├── client.js
+│   │       ├── default.d.ts
+│   │       ├── default.js
+│   │       ├── edge.d.ts
+│   │       ├── edge.js
+│   │       ├── index-browser.js
+│   │       ├── index.d.ts
+│   │       ├── index.js
+│   │       ├── libquery_engine-debian-openssl-3.0.x.so.node
+│   │       ├── package.json
+│   │       ├── query_engine_bg.js
+│   │       ├── query_engine_bg.wasm
+│   │       ├── runtime
+│   │       │   ├── edge-esm.js
+│   │       │   ├── edge.js
+│   │       │   ├── index-browser.d.ts
+│   │       │   ├── index-browser.js
+│   │       │   ├── library.d.ts
+│   │       │   ├── library.js
+│   │       │   ├── react-native.js
+│   │       │   ├── wasm-compiler-edge.js
+│   │       │   └── wasm-engine-edge.js
+│   │       ├── schema.prisma
+│   │       ├── wasm.d.ts
+│   │       ├── wasm-edge-light-loader.mjs
+│   │       ├── wasm.js
+│   │       └── wasm-worker-loader.mjs
+│   ├── .gitignore
+│   ├── index.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── prisma
+│   │   ├── migrations
+│   │   │   ├── 20251019034918_init
+│   │   │   │   └── migration.sql
+│   │   │   ├── 20251023182743_update
+│   │   │   │   └── migration.sql
+│   │   │   └── migration_lock.toml
+│   │   └── schema.prisma
+│   ├── public
+│   │   └── uploads
+│   │       ├── 1bc67e0b1e89065615ca877296ed7f1e
+│   │       ├── 3fe21704357cc680f26f6620abbb8913
+│   │       ├── b1b2b47b5a3f0884bf2896ae9ffcb539
+│   │       ├── c20f36b35ede0422b6845cfb6a75d2fa
+│   │       └── c9167fbc2b5d0628890e3bcd9db3416b
+│   └── routers
+│       ├── folderRouter.js
+│       ├── loginRouter.js
+│       └── registerRouter.js
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   ├── components
+│   │   ├── index.jsx
+│   │   ├── login.jsx
+│   │   ├── main.jsx
+│   │   ├── nav.jsx
+│   │   ├── newFileButton.jsx
+│   │   ├── newFolderButton.jsx
+│   │   ├── protectedRoute.jsx
+│   │   ├── register.jsx
+│   │   └── sidebar.jsx
+│   ├── index.css
+│   └── main.jsx
+├── structure.txt
+└── vite.config.js
+
+98 directories, 167 files
