@@ -28,7 +28,7 @@ router.get("/check", async (req, res) => {
                 authenticated: false
             });
         }
-    } catch {
+    } catch (err){
         console.error('Error in /check route:', err);
         res.status(500).json({ 
             authenticated: false, 

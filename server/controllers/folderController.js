@@ -1,19 +1,22 @@
 const { PrismaClient } = require("../generated/prisma");
 const prisma = new PrismaClient();
+const fs = require('fs')
+const path = require('path')
 
 const createFolder = async (req, res) => {
     try {
         const { folderName, parentId } = req.body;
+        if (!folderName) return res.status(400).json({ success: false, message: "Folder name required" });
         await prisma.folder.create({
             data: {
                 name: folderName,
-                parentId: parseInt(parentId) || null,
+                parentId: parentId ? parseInt(parentId) : null,
                 userId: req.user.id
             }
         })
         res.json({success: true});
     } catch (err) {
-        console.error(err);
+        console.error('Error creating Folder', err);
         res.status(500).send("Error creating folder");
     }
 }
@@ -23,18 +26,20 @@ const uploadFile = async (req, res) => {
         const { filename, originalname, size } = req.file;
         const { folderId } = req.body;
         const userId = req.user.id;
+
         await prisma.file.create({
             data: {
                 filename: filename,
                 originalFileName: originalname,
                 fileSize: size,
-                userId: userId,
+                userId,
                 folderId: folderId ? parseInt(folderId) : null
             }
         })
-        res.json({success: true, filename: req.file.originalFileName})
+
+        res.json({success: true, filename: originalname})
     } catch (err) {
-        console.error(err);
+        console.error('Error uploading file', err);
         res.status(500).send("Error uploading file");
     }
 }
