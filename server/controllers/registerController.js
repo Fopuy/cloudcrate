@@ -14,6 +14,7 @@ const register = async (req, res) => {
     const existingUser = await prisma.user.findUnique({
       where: { username },
     });
+
     if (existingUser) {
       return res
         .status(409)
@@ -28,8 +29,8 @@ const register = async (req, res) => {
             password: hashedPassword
         }
     })
-    res.json({success:true, message:'User registered successfully'})
-    } catch {
+    return res.json({success:true, message:'User registered successfully'})
+    } catch (err) {
         console.error('Error registering user:', err);
         return res
         .status(500)

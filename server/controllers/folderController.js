@@ -29,7 +29,7 @@ const uploadFile = async (req, res) => {
 
         await prisma.file.create({
             data: {
-                filename: filename,
+                filename,
                 originalFileName: originalname,
                 fileSize: size,
                 userId,
@@ -46,8 +46,17 @@ const uploadFile = async (req, res) => {
 
 const deleteFile = async (req, res) => {
     try {
-        const { folderId, fileId } = req.body;
+        const { fileId } = req.body;
         const id = parseInt(fileId);
+        const userId = req.user.id;
+        const file = await prisma.file.findUnique({ where: { id } });
+            if (!file || file.userId !== userId) {
+                return res.status(403).json({ success: false, message: "Unauthorized" });
+            }
+        //Delete actual file
+        const filePath = path.join(__dirname, "../public/uploads", file.filename);
+        if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
+        //Delete from DB
         await prisma.file.delete({
             where: { 
                 id: id,
@@ -55,22 +64,21 @@ const deleteFile = async (req, res) => {
         })
         res.json({success: true, message: "File deleted"})
     } catch (err){
-        console.log(err);
+        console.error("Error deleting file:", err);
+        res.status(500).send("Error deleting file");
     }
 }
 
 const deleteFolder = async (req, res) => {
     try {
         const { folderId } = req.body;
-       
-
         const id = parseInt(folderId);
+        const userId = req.user.id;
 
-        
-        const folder = await prisma.folder.findUnique({
-        where: { id },
-        select: { parentId: true }
-        });
+        const folder = await prisma.folder.findUnique({ where: { id } });
+            if (!folder || folder.userId !== userId) {
+                return res.status(403).json({ success: false, message: "Unauthorized" });
+        }
 
         await prisma.folder.delete({
         where: { id },
