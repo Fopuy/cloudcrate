@@ -154,29 +154,29 @@ export default function Main({folderId}){
             )}
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold text-gray-800">My Drive</h2>
-                <div class="flex space-x-2">
-                    <button class="p-2 rounded-full hover:bg-gray-100">
+                <div className="flex space-x-2">
+                    <button className="p-2 rounded-full hover:bg-gray-100">
                         <i data-feather="grid"></i>
                     </button>
-                    <button class="p-2 rounded-full bg-gray-100">
+                    <button className="p-2 rounded-full bg-gray-100">
                         <i data-feather="list"></i>
                     </button>
-                    <button class="p-2 rounded-full hover:bg-gray-100">
+                    <button className="p-2 rounded-full hover:bg-gray-100">
                             <i data-feather="settings"></i>
                     </button>
                 </div>
             </div>
-            <div class="bg-white rounded-lg border border-gray-400 overflow-hidden">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
+            <div className="bg-white rounded-lg border border-gray-400 overflow-hidden">
+                <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Modified</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Modified</th>
+                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
+                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
+                    <tbody className="bg-white divide-y divide-gray-200">
                         {folders.length === 0 && files.length === 0 && (
                         <tr>
                             <td colSpan="4" className="text-center py-6 text-gray-500">
@@ -188,12 +188,12 @@ export default function Main({folderId}){
                             <tr key={folder.id} 
                                 className="hover:bg-gray-50 cursor-pointer "
                                 onClick={()=>handleFolderClick(folder.id)}>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 text-blue-500"></div>
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                <div className="flex items-center">
+                                    <div className="flex-shrink-0 text-blue-500"></div>
                                     <i data-feather="folder" ></i>
-                                <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900">{folder.name}</div>
+                                <div className="ml-4">
+                                    <div className="text-sm font-medium text-gray-900">{folder.name}</div>
                                 </div>
                                 </div>
                                 </td>
@@ -206,19 +206,19 @@ export default function Main({folderId}){
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                     <button
                                         onClick={(e) => handleMenuToggle(folder, e)}
-                                        class="text-gray-500 hover:text-gray-700 cursor-pointer"><i data-feather="more-vertical"></i>
+                                        className="text-gray-500 hover:text-gray-700 cursor-pointer"><i data-feather="more-vertical"></i>
                                     </button>
                                 </td>
                             </tr>
                         ))} 
                         {files.map((file)=> (
                             <tr key={file.id} className="hover:bg-gray-50">
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 text-blue-500"></div>
+                                <td className="px-6 py-4 whitespace-nowrap">
+                                <div className="flex items-center">
+                                    <div className="flex-shrink-0 text-blue-500"></div>
                                     <i data-feather="file" ></i>
-                                <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900">{file.originalFileName}</div>
+                                <div className="ml-4">
+                                    <div className="text-sm font-medium text-gray-900">{file.originalFileName}</div>
                                 </div>
                                 </div>
                                 </td>
@@ -229,14 +229,14 @@ export default function Main({folderId}){
                                     {(file.fileSize / (1024 * 1024)).toFixed(2)} MB
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <button class="text-blue-500 hover:text-blue-700 mr-2">
+                                    <button className="text-blue-500 hover:text-blue-700 mr-2">
                                         <a 
                                         href={`http://localhost:3000/uploads/${file.filename}`}
                                         download={file.originalFileName}>
                                         <i data-feather="download"></i></a></button>
                                     <button
                                         onClick={(e) => handleMenuToggle(file, e)}
-                                        class="text-gray-500 hover:text-gray-700 cursor-pointer"><i data-feather="more-vertical"></i>
+                                        className="text-gray-500 hover:text-gray-700 cursor-pointer"><i data-feather="more-vertical"></i>
                                     </button>
 
                                 </td>

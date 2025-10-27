@@ -10,7 +10,7 @@ export default function Index(){
         <div className="bg-gray-50 min-h-screen">
             <Nav />
             <div className="flex">
-                <Sidebar folderId={folderId || null}/>
+                <Sidebar folderId={folderId || null} />
                 <Main folderId={folderId || null}/>
             </div>
         </div>

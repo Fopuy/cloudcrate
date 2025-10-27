@@ -48,7 +48,7 @@ export default function NewFileButton(){
             />
             <button 
                 onClick={handleNewFileClick}
-                class="w-full flex items-center justify-center space-x-2 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+                className="w-full flex items-center justify-center space-x-2 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">
                 <i data-feather="plus"></i>
                 <span>New File</span>
             </button>
