@@ -5,6 +5,7 @@ export default function Register(){
     const [username, setUsername]=useState("")
     const [password, setPassword]=useState("")
     const navigate = useNavigate();
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
     const handleSubmit = async (e) => {
         if (!username.trim() || !password.trim()) {
@@ -13,7 +14,7 @@ export default function Register(){
         }
         e.preventDefault();
         try{
-            const res = await fetch ("http://localhost:3000/api/register", {
+            const res = await fetch (`${API_BASE}/api/register`, {
                 method: "POST",
                 headers: { "Content-Type":"application/json"},
                 credentials: "include",

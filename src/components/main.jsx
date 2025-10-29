@@ -8,6 +8,7 @@ export default function Main({folderId}){
     const [loading, setLoading] = useState(true);
     const [currentFolder, setCurrentFolder]=useState(null)
     const navigate = useNavigate();
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
     const [activeMenu, setActiveMenu] = useState(null);
     const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
@@ -40,7 +41,7 @@ export default function Main({folderId}){
 
     const handleDelete = async (file) => {
     try {
-        const res = await fetch("http://localhost:3000/api/index/delete", {
+        const res = await fetch(`${API_BASE}/api/index/delete`, {
         method: "POST", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -73,7 +74,7 @@ export default function Main({folderId}){
         const confirmDelete = confirm(`Are you sure you want to delete the folder "${folder.name}"?`);
         if (!confirmDelete) return;
 
-        const res = await fetch("http://localhost:3000/api/index/deleteFolder", {
+        const res = await fetch(`${API_BASE}/api/index/deleteFolder`, {
         method: "POST", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -112,7 +113,7 @@ export default function Main({folderId}){
     useEffect(() => {
     const fetchFolderContents = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/index/${folderId}`, {
+        const res = await fetch(`${API_BASE}/api/index/${folderId}`, {
         credentials: "include",});
         const data = await res.json();
 

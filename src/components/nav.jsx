@@ -1,7 +1,8 @@
 export default function Nav(){
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
     const handleLogout = async (e) => {
         try {
-            const res = await fetch("http://localhost:3000/api/logout", {
+            const res = await fetch(`${API_BASE}/api/logout`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 
 export default function NewFolderButton ({folderId}){
     const [folderName, setFolderName] = useState ('')
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
     const folderInputRef = useRef(null);
 
@@ -16,7 +17,7 @@ export default function NewFolderButton ({folderId}){
     const handleCreateFolder = async (e) => {
         try{
             e.preventDefault();
-            const res = await fetch("http://localhost:3000/api/index/create", {
+            const res = await fetch(`${API_BASE}/api/index/create`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

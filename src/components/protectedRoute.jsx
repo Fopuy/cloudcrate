@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 export default function ProtectedRoute({ children }) {
   const [auth, setAuth] = useState(null);
   const [loading, setLoading] = useState(true);
+  const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     let isMounted = true;
 
     const checkAuth = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/index/check', {
+        const res = await fetch(`${API_BASE}/api/index/check`, {
           credentials: 'include',
         });
         const data = await res.json();

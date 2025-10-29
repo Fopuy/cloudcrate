@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { useParams } from "react-router-dom";
-import supabase from './supabaseClient' //supabase
 
 export default function NewFileButton(){
     const fileInputRef = useRef(null);
     const { folderId } = useParams(); 
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
     const handleNewFileClick = () => {
         fileInputRef.current.click();
@@ -19,7 +19,7 @@ export default function NewFileButton(){
         if (folderId) formData.append("folderId", folderId);
 
         try{
-            const res = await fetch("http://localhost:3000/api/index/upload", {
+            const res = await fetch(`${API_BASE}/api/index/upload`, {
                 method: "POST",
                 body: formData,
                 credentials: "include"
