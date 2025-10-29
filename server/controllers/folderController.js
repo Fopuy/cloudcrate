@@ -65,23 +65,26 @@ const uploadFile = async (req, res) => {
 
 const deleteFile = async (req, res) => {
     try {
-        const { fileId } = req.body;
+        const { fileId, folderId, originalname } = req.body;
         const id = parseInt(fileId);
         const userId = req.user.id;
         const file = await prisma.file.findUnique({ where: { id } });
             if (!file || file.userId !== userId) {
                 return res.status(403).json({ success: false, message: "Unauthorized" });
             }
-        //Delete actual file
-        const filePath = path.join(__dirname, "../public/uploads", file.filename);
-        if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-        //Delete from DB
+
+        const filePath = folderId ? `${folderId}/${originalname}` : originalname;
+        const { data, error } = await supabase.storage
+            .from('cloudcrate_files')
+            .remove([filePath]);
+        
         await prisma.file.delete({
             where: { 
                 id: id,
             },
         })
-        res.json({success: true, message: "File deleted"})
+        console.log(folderId, originalname)
+        res.json({success: true, message: "File deleted", data})
     } catch (err){
         console.error("Error deleting file:", err);
         res.status(500).send("Error deleting file");

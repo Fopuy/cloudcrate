@@ -46,6 +46,8 @@ export default function Main({folderId}){
         body: JSON.stringify({
             fileId: file.id,
             parentId: folderId || null,
+            folderId,
+            originalname: file.originalFileName
         }),
         credentials: "include",
         });
