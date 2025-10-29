@@ -63,6 +63,7 @@ export default function Login (){
                             Login
                     </button>
             </form>
+            <a href="/register" className="mt-4 text-blue-500 hover:underline">Don't have an account? Register</a>
         </div>
         </>
     )
