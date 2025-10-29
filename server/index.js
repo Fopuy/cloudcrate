@@ -27,15 +27,11 @@ app.use(
         cookie: {
         maxAge: 60 * 60 * 1000,
         secure: true,
-        resave: false,
         httpOnly: true,
         sameSite: 'none',
         },
         secret: process.env.SESSION_SECRET || 'defaultkey',
-        secure: true,
         resave: false,
-        httpOnly: true,
-        sameSite: 'none',
         saveUninitialized: false,
         store: new PrismaSessionStore(
             new PrismaClient(),
