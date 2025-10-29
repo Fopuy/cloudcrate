@@ -46,7 +46,7 @@ export default function Login (){
                         onChange={(e)=>setUsername(e.target.value)}
                         required
                     />
-                <label for="password" className="block text-md font-medium text-gray-700 mb-2">Password: </label>
+                <label htmlFor="password" className="block text-md font-medium text-gray-700 mb-2">Password: </label>
                     <input 
                         className="input-field mb-2 pl-10 w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500 transition duration-200" 
                         type="password" 

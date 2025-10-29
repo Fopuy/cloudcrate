@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { useParams } from "react-router-dom";
-
+import supabase from './supabaseClient' //supabase
 
 export default function NewFileButton(){
     const fileInputRef = useRef(null);
@@ -24,8 +24,8 @@ export default function NewFileButton(){
                 body: formData,
                 credentials: "include"
             })
-
             const data = await res.json();
+
             if (res.ok) {
                 alert(`File "${file.name}" uploaded successfully!`);
             } else {

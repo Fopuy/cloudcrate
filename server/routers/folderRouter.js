@@ -10,8 +10,8 @@ const fs = require('fs')
 const uploadDir = "./public/uploads"
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 
-const upload = multer({ dest: uploadDir });
-
+//const upload = multer({ dest: uploadDir });
+const upload = multer({ storage: multer.memoryStorage()})
 
 router.post("/upload", upload.single('file'), uploadFile)
 router.post("/delete", deleteFile)

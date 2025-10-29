@@ -3,6 +3,13 @@ const prisma = new PrismaClient();
 const fs = require('fs')
 const path = require('path')
 
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(
+    process.env.SUPABASE_URL,
+    //process.env.SUPABASE_ANON_KEY,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+);
+
 const createFolder = async (req, res) => {
     try {
         const { folderName, parentId } = req.body;
@@ -23,9 +30,18 @@ const createFolder = async (req, res) => {
 
 const uploadFile = async (req, res) => {
     try {
-        const { filename, originalname, size } = req.file;
+        const { originalname, size, buffer, mimetype } = req.file;
         const { folderId } = req.body;
         const userId = req.user.id;
+        const filename = originalname;
+
+        const { data, error } = await supabase.storage
+            .from('cloudcrate_files')
+            .upload(folderId ? `${folderId}/${originalname}` : originalname, buffer, {
+                cacheControl: '3600',
+                upsert: false,
+                contentType: mimetype
+            });
 
         await prisma.file.create({
             data: {
@@ -36,8 +52,11 @@ const uploadFile = async (req, res) => {
                 folderId: folderId ? parseInt(folderId) : null
             }
         })
-
-        res.json({success: true, filename: originalname})
+        if (error) {
+            console.error('Supabase upload error:', error);
+            return res.status(400).json({ success: false, error: error.message });
+        }
+        res.json({success: true, filename: originalname, data})
     } catch (err) {
         console.error('Error uploading file', err);
         res.status(500).send("Error uploading file");
