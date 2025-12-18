@@ -3,7 +3,11 @@ const router = express.Router();
 const { uploadFile, createFolder, deleteFile, deleteFolder } = require("../controllers/folderController");
 const multer = require("multer");
 const { PrismaClient } = require("../generated/prisma");
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  adapter: {
+    url: process.env.DATABASE_URL,
+  },
+});
 
 //create a folder if the folder doesn't exist yet.
 const fs = require('fs')

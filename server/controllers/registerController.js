@@ -1,5 +1,9 @@
 const { PrismaClient } = require('../generated/prisma')
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  adapter: {
+    url: process.env.DATABASE_URL,
+  },
+});
 const bcrypt = require('bcrypt')
 
 const register = async (req, res) => {

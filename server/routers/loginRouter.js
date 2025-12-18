@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const { PrismaClient } = require('../generated/prisma');
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  adapter: {
+    url: process.env.DATABASE_URL,
+  },
+});
 
 //Passport Local Strategy
 passport.use(
